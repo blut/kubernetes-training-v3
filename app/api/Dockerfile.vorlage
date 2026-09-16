@@ -1,0 +1,20 @@
+# Übungs-Dockerfile für die API (Session 1, Modul 1)
+# Ersetze alle TODOs. Base Image, Copy-Anweisung und CMD müssen zusammenpassen.
+
+# TODO: Ein kleines, offizielles Node-Base-Image wählen (z. B. node:20-alpine)
+FROM __BASE_IMAGE__
+
+WORKDIR /app
+
+# TODO: server.js in das Arbeitsverzeichnis kopieren
+COPY __SOURCE_FILE__ .
+
+# Die API lauscht standardmäßig auf Port 8080 (siehe PORT in server.js)
+EXPOSE 8080
+
+# TODO: Startbefehl definieren (Node-Skript direkt ausführen)
+CMD ["__COMMAND__", "__ARG__"]
+
+# Zusatzaufgabe (Schritt 5 im Modul): .dockerignore ergänzen und einen
+# nicht-root Benutzer für den Container konfigurieren, z. B. mit
+# `USER node` (im node-Image bereits vorhanden).
