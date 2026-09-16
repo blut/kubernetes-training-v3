@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-pod
+  labels:
+    app: __TODO_LABEL_WERT__ # z. B. api
+spec:
+  containers:
+    - name: api
+      image: __TODO_IMAGE_NAME__:__TODO_TAG__ # z. B. k8s-training-api:v1
+      ports:
+        - containerPort: __TODO_PORT__ # Port, auf dem die API lauscht
+      env:
+        - name: BACKEND_URL
+          value: "http://backend:9090"
