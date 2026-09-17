@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  labels:
+    app: __TODO_LABEL_WERT__ # z. B. api
+spec:
+  replicas: __TODO_REPLICAS__ # z. B. 2
+  selector:
+    matchLabels:
+      app: __TODO_LABEL_WERT__ # muss zu template.metadata.labels passen
+  template:
+    metadata:
+      labels:
+        app: __TODO_LABEL_WERT__
+    spec:
+      containers:
+        - name: api
+          image: __TODO_IMAGE_NAME__:__TODO_TAG__
+          ports:
+            - containerPort: 8080
+          env:
+            - name: BACKEND_URL
+              value: "http://backend:9090"
